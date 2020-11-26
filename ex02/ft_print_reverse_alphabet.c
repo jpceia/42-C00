@@ -1,9 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jceia <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/26 16:55:00 by jceia             #+#    #+#             */
+/*   Updated: 2020/11/26 16:56:36 by jceia            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
-    for(char c = 'z'; c >= 'a'; c--)
-    {
-        write(1, &c, 1);
-    }
+	char c;
+
+	c = 'z';
+	while (c >= 'a')
+	{
+		write(1, &c, 1);
+		c--;
+	}
 }
