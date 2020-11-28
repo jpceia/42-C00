@@ -6,7 +6,7 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:24:09 by jceia             #+#    #+#             */
-/*   Updated: 2020/11/28 15:23:02 by jceia            ###   ########.fr       */
+/*   Updated: 2020/11/28 15:26:59 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	next_iter(char *a, int n)
 		if (a[pos] < '9' + pos - n + 1)
 		{
 			init_buffer(a, pos, n, a[pos] + 1);
-			break;
+			break ;
 		}
 		else
 		{
@@ -57,9 +57,4 @@ void	ft_print_combn(int n)
 		next_iter(a, n);
 	}
 	write(1, &a[0], n);
-}
-
-int 	main()
-{
-	ft_print_combn(4);
 }
