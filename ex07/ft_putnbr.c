@@ -6,11 +6,39 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 22:33:22 by jceia             #+#    #+#             */
-/*   Updated: 2020/11/26 22:34:54 by jceia            ###   ########.fr       */
+/*   Updated: 2020/11/28 14:39:02 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	print_digit_n(int x, int n)
+{
+	char c;
+
+	while (n > 0)
+	{
+		x /= 10;
+		n--;
+	}
+	x = x % 10;
+	c = '0' + x;
+	write(1, &c, 1);
+}
+
+int		get_nr_figures(int x)
+{
+	int n_figures;
+
+	x = x < 0 ? -x : x;
+	n_figures = 0;
+	while (x > 0)
+	{
+		x /= 10;
+		n_figures++;
+	}
+	return (n_figures);
+}
 
 void	ft_putnbr(int nb)
 {
@@ -27,32 +55,4 @@ void	ft_putnbr(int nb)
 		print_digit_n(nb, i);
 		i--;
 	}
-}
-
-int	get_nr_figures(int x)
-{
-	int n_figures;
-
-	x = x < 0 ? -x : x;
-	n_figures = 0;
-	while (x > 0)
-	{
-		x /= 10;
-		n_figures++;
-	}
-	return (n_figures);
-}
-
-void	print_digit_n(int x, int n)
-{
-	char c;
-
-	while (n > 0)
-	{
-		x /= 10;
-		n--;
-	}
-	x = x % 10;
-	c = '0' + x;
-	write(1, &c, 1);
 }
