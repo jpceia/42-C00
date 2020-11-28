@@ -6,7 +6,7 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:24:09 by jceia             #+#    #+#             */
-/*   Updated: 2020/11/28 15:21:15 by jceia            ###   ########.fr       */
+/*   Updated: 2020/11/28 15:23:02 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	init_buffer(char *a, int n, int m, char l)
 	k = n;
 	while (k < m)
 	{
-		a[k] = l + k;
+		a[k] = l + k - n;
 		k++;
 	}
 	a[m] = ',';
@@ -35,14 +35,7 @@ void	next_iter(char *a, int n)
 	{
 		if (a[pos] < '9' + pos - n + 1)
 		{
-			if(pos == 0)
-			{
-				init_buffer(a, 0, n, a[0] + 1);
-			}
-			else
-			{
-				a[pos]++;
-			}
+			init_buffer(a, pos, n, a[pos] + 1);
 			break;
 		}
 		else
